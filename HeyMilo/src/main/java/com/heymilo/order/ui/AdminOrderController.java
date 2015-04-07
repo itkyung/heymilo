@@ -90,10 +90,9 @@ public class AdminOrderController {
 		
 		List<OneTimeOrder> orders = orderService.searchOrder(condition);
 		for(OneTimeOrder order : orders) {
-			
-			
+			OrderListDTO dto = new OrderListDTO(order);
+			results.add(dto);
 		}
-		
 		
 		int totalCount = orderService.countOrder(condition);
 		

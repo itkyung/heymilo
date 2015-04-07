@@ -1,5 +1,8 @@
 package com.heymilo.order;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
 import com.google.gson.annotations.Expose;
 import com.heymilo.order.entity.Order;
 import com.heymilo.order.entity.OrderStatus;
@@ -21,13 +24,15 @@ public class OrderListDTO {
 	private String buyerEmail;
 	
 	@Expose
-	private String createdStr;
+	private String createdStr; 
 	
 	@Expose
 	private String updatedStr;
 	
 	@Expose
 	private double totalPrice;
+	
+	private DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH24:mi");
 	
 	public OrderListDTO(){
 		
@@ -37,7 +42,11 @@ public class OrderListDTO {
 		this.id = order.getId();
 		this.buyerName = order.getUser().getName();
 		this.buyerEmail = order.getUser().getEmail();
-		
+		this.status = order.getStatus();
+		this.productDesc = order.getProductDesc();
+		this.totalPrice = order.getTotalPrice().doubleValue();
+		this.createdStr = format.format(order.getCreatedAt());
+		this.updatedStr = format.format(order.getUpdatedAt());
 	}
 
 	public Long getId() {
