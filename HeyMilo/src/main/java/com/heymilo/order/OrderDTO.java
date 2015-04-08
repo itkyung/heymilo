@@ -20,7 +20,7 @@ public class OrderDTO {
 	
 	private String receiveName;	//수령자 이름  
 	
-	private List<OrderItemDto> orderItems = new ArrayList<>();
+	private List<OrderItemDto> orderItems = new ArrayList<OrderItemDto>();
 
 	public double getTotalPrice() {
 		return totalPrice;

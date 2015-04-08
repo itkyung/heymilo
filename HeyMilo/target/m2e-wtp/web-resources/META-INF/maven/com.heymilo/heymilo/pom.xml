@@ -303,11 +303,17 @@
 			<version>0.9.2</version>
 		</dependency>
 
-	<dependency>
-		<groupId>org.bouncycastle</groupId>
-		<artifactId>bcprov-ext-jdk16</artifactId>
-		<version>1.46</version>
-	</dependency>      
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcprov-ext-jdk16</artifactId>
+			<version>1.46</version>
+		</dependency>    
+		
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>18.0</version>
+		</dependency>  
 	</dependencies>
     <build>
         <plugins>

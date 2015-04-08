@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.google.common.collect.Lists;
 import com.heymilo.identity.entity.User;
 import com.heymilo.order.OrderDAO;
 import com.heymilo.order.OrderDTO;
@@ -101,7 +102,7 @@ public class OrderServiceImpl implements OrderService {
 		
 		double totalPrice = 0;
 		String productDesc=null;
-		List<OrderItem> orderItems = new ArrayList<>();
+		List<OrderItem> orderItems = Lists.newArrayList();
 		order.setItems(orderItems);
 		
 		for(OrderItemDto itemDto : orderDto.getOrderItems()) {

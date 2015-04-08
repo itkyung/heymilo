@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
 import com.heymilo.shop.entity.Category;
 import com.heymilo.shop.entity.Exhibition;
 import com.heymilo.shop.entity.ExhibitionType;
@@ -104,7 +106,7 @@ public class ProductServiceImpl implements ProductService {
 	private void setCategory(Product product, Long[] categories) {
 		Set<Category> categoryEntities = product.getCategories();
 		if(categoryEntities == null) {
-			categoryEntities = new HashSet<>();
+			categoryEntities = Sets.newHashSet();
 			product.setCategories(categoryEntities);
 		}
 		for(Long categoryId : categories) {
@@ -116,7 +118,7 @@ public class ProductServiceImpl implements ProductService {
 	private void setFeature(Product product, Long[] features) {
 		Set<ProductFeature> featureEntities = product.getFeatures();
 		if(featureEntities == null) {
-			featureEntities = new HashSet<>();
+			featureEntities = Sets.newHashSet();
 			product.setFeatures(featureEntities);
 		}
 		for(Long featureId : features) {
@@ -130,7 +132,7 @@ public class ProductServiceImpl implements ProductService {
 		
 		Set<Exhibition> exhibitionEntities = product.getExhibitions();
 		if(exhibitionEntities == null) {
-			exhibitionEntities = new HashSet<>();
+			exhibitionEntities = Sets.newHashSet();
 			product.setExhibitions(exhibitionEntities);
 		}
 		for(Long exhibitionId : exhibitions) {
@@ -145,7 +147,7 @@ public class ProductServiceImpl implements ProductService {
 	private void setImages(Product product, String[] images) {
 		List<ProductImage> subImages = product.getImages();
 		if(subImages == null) {
-			subImages = new ArrayList<>(); 
+			subImages = Lists.newArrayList();
 			product.setImages(subImages);
 		}else{
 			subImages.clear();

@@ -109,14 +109,14 @@ public class Product implements Serializable {
 			@JoinColumn(name = "PRODUCT_ID", nullable = false, updatable = false) }, 
 			inverseJoinColumns = { @JoinColumn(name = "CATEGORY_ID", 
 					nullable = false, updatable = false) })
-	private Set<Category> categories = new HashSet<>();
+	private Set<Category> categories = new HashSet<Category>();
 	
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinTable(name = "HM_PRODUCT_EXHIBITION_LINK", joinColumns = { 
 			@JoinColumn(name = "PRODUCT_ID", nullable = false, updatable = false) }, 
 			inverseJoinColumns = { @JoinColumn(name = "EXHIBITION_ID", 
 					nullable = false, updatable = false) })
-	private Set<Exhibition> exhibitions = new HashSet<>();
+	private Set<Exhibition> exhibitions = new HashSet<Exhibition>();
 	
 	
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -124,7 +124,7 @@ public class Product implements Serializable {
 			@JoinColumn(name = "PRODUCT_ID", nullable = false, updatable = false) }, 
 			inverseJoinColumns = { @JoinColumn(name = "FEATURE_ID", 
 					nullable = false, updatable = false) })
-	private Set<ProductFeature> features = new HashSet<>();
+	private Set<ProductFeature> features = new HashSet<ProductFeature>();
 	
 	@Expose
 	@Column(nullable=false)

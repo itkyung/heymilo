@@ -86,7 +86,7 @@ public class AdminOrderController {
 		condition.setStart(condition.getStart());
 		condition.setLimit(_perPage);
 		
-		List<OrderListDTO> results = new ArrayList<>();
+		List<OrderListDTO> results = new ArrayList<OrderListDTO>();
 		
 		List<OneTimeOrder> orders = orderService.searchOrder(condition);
 		for(OneTimeOrder order : orders) {
