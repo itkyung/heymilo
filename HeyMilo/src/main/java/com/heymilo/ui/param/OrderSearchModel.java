@@ -5,7 +5,7 @@ import com.heymilo.order.entity.OrderStatus;
 public class OrderSearchModel extends DataTableSearchModel {
 	
 	private OrderStatus status;
-	private Long orderId;
+	private String orderNo;
 	private Long buyerId;
 	
 	public OrderStatus getStatus() {
@@ -14,11 +14,12 @@ public class OrderSearchModel extends DataTableSearchModel {
 	public void setStatus(OrderStatus status) {
 		this.status = status;
 	}
-	public Long getOrderId() {
-		return orderId;
+	
+	public String getOrderNo() {
+		return orderNo;
 	}
-	public void setOrderId(Long orderId) {
-		this.orderId = orderId;
+	public void setOrderNo(String orderNo) {
+		this.orderNo = orderNo;
 	}
 	public Long getBuyerId() {
 		return buyerId;

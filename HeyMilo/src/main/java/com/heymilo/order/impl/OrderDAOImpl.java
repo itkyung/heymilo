@@ -75,21 +75,21 @@ public class OrderDAOImpl implements OrderDAO {
 		}
 		strBuilder.append("FROM OneTimeOrder a WHERE active = :active ");
 		
-		if(searchModel.getOrderId() != null) {
-			strBuilder.append("AND a.id = :orderId ");
+		if(searchModel.getOrderNo() != null) {
+			strBuilder.append("AND a.orderNo = :orderNo ");
 		} else {
 			if(searchModel.getStatus() != null ){
 				strBuilder.append("AND a.status = :status ");
 			}
 			if(searchModel.getBuyerId() != null) {
-				strBuilder.append("AND a.user.id = :buyerId ");
+				strBuilder.append("AND a.user.loginId = :buyerId ");
 			}
 		}
 		
 		Query query = em.createQuery(strBuilder.toString());
 		query.setParameter("active", true);
-		if(searchModel.getOrderId() != null) {
-			query.setParameter("orderId", searchModel.getOrderId());
+		if(searchModel.getOrderNo() != null) {
+			query.setParameter("orderNo", searchModel.getOrderNo());
 		}else {
 			if(searchModel.getStatus() != null ){
 				query.setParameter("status", searchModel.getStatus());

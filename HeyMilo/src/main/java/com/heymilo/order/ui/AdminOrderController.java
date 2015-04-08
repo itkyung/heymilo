@@ -75,7 +75,7 @@ public class AdminOrderController {
 	
 	@RequestMapping(value = "/admin/listOrders", method = RequestMethod.GET)
 	public String listOrders() throws IOException {
-		return "admin/product/listProducts";
+		return "admin/order/listOrders";
 	}
 	
 	@RequestMapping(value = "/admin/searchOrders", produces = "application/json;charset=utf-8")

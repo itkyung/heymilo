@@ -99,6 +99,7 @@ public class OrderServiceImpl implements OrderService {
 		order.setStatus(OrderStatus.ORDERD);
 		order.setUser(user);
 		order.setActive(true);
+		order.setOrderNo(generateOrderNo(user.getId()));
 		
 		double totalPrice = 0;
 		String productDesc=null;
@@ -126,6 +127,11 @@ public class OrderServiceImpl implements OrderService {
 		return order;
 	}
 
+	private String generateOrderNo(Long memberId) {
+		Date current = new Date();
+		return String.valueOf(memberId + current.getTime());
+	}
+	
 	@Transactional
 	@Override
 	public SubscriptionOrder createSubscriptionOrder(OrderDTO orderDto,

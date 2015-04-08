@@ -40,6 +40,8 @@ public class Order {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
+	private String orderNo;	//오더번호 12자리를 만들자.
+	
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date createdAt;
 	
@@ -194,6 +196,14 @@ public class Order {
 
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
+	}
+
+	public String getOrderNo() {
+		return orderNo;
+	}
+
+	public void setOrderNo(String orderNo) {
+		this.orderNo = orderNo;
 	}
 	
 	
